@@ -2,7 +2,30 @@
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+<head>
+    <h1> Price Quotation</h1>
+</head>
+<br />
+<body>
+
+    <p>Subtotal:</p>
+    <input type="text" name="Name" class="form-control" />
+
+    <p>Discount percent:</p>
+    <input type="text" name="Name" class="form-control" />  
+
+
+    <p>Discount amount:</p>
+    <div DiscountAmount>
+        <p>$0.00</p>
+    </div>
+	<p>Total:</p>
+    <div Total>
+		<p>$0.00</p>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Calculate</button>
+    <button type="button" class="btn btn-secondary">Clear</button>
+
+
+</body>
