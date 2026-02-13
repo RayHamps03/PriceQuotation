@@ -2,17 +2,17 @@
     ViewData["Title"] = "Home Page";
 }
 
-<head>
-    <h1> Price Quotation</h1>
-</head>
-<br />
+
+<h1> Price Quotation</h1>
+
+<br/>
 <body>
 
-    <p>Subtotal:</p>
-    <input type="text" name="Name" class="form-control" />
+    <label for="Subtotal">Subtotal:</label>
+    <input type="text" name="Subtotal" class="PriceQuote" /> <br/><br/>
 
-    <p>Discount percent:</p>
-    <input type="text" name="Name" class="form-control" />  
+    <label for="DiscountPercent">Discount Percent:</label>
+    <input type="text" name="DiscountPercent" class="PriceQuote" />  
 
 
     <p>Discount amount:</p>
@@ -25,7 +25,7 @@
     </div>
 
     <button type="submit" class="btn btn-primary">Calculate</button>
-    <button type="button" class="btn btn-secondary">Clear</button>
+    <input type="reset" value="Reset" />
 
 
 </body>
