@@ -1,8 +1,43 @@
-﻿@{
+﻿@model PriceQuotation.Models.PriceQuote
+
+@{
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+
+<h1> Price Quotation</h1>
+
+<br />
+
+<body>
+
+    <form asp-action="Index" method="post">
+
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+        <label asp-for="Subtotal">Subtotal:</label>
+        <input asp-for="Subtotal" />
+        <span asp-validation-for="Subtotal" class="text-danger"></span>
+        <br />
+
+        <label asp-for="DiscountPercent">Discount percent:</label>
+        <input asp-for="DiscountPercent" />
+        <span asp-validation-for="DiscountPercent" class="text-danger"></span>
+
+        <div>
+            <label>Discount amount:</label>
+            <label>@ViewBag.DiscountAmount.ToString("c2")</label>
+        </div>
+        <div>
+            <label>Total:</label>
+            <label>@ViewBag.Total.ToString("c2")</label>
+        </div>
+
+        <button type="submit">Calculate</button>
+        <a asp-action="Index">clear</a>
+         
+    </form>
+
+    
+
+</body>
