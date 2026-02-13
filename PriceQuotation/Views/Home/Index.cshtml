@@ -1,31 +1,43 @@
-﻿@{
+﻿@model PriceQuotation.Models.PriceQuote
+
+@{
     ViewData["Title"] = "Home Page";
 }
 
 
 <h1> Price Quotation</h1>
 
-<br/>
+<br />
+
 <body>
 
-    <label for="Subtotal">Subtotal:</label>
-    <input type="text" name="Subtotal" class="PriceQuote" /> <br/><br/>
+    <form asp-action="Index" method="post">
 
-    <label for="DiscountPercent">Discount Percent:</label>
-    <input type="text" name="DiscountPercent" class="PriceQuote" />  
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
 
+        <label asp-for="Subtotal">Subtotal:</label>
+        <input asp-for="Subtotal" />
+        <span asp-validation-for="Subtotal" class="text-danger"></span>
+        <br />
 
-    <p>Discount amount:</p>
-    <div DiscountAmount>
-        <p>$0.00</p>
-    </div>
-	<p>Total:</p>
-    <div Total>
-		<p>$0.00</p>
-    </div>
+        <label asp-for="DiscountPercent">Discount percent:</label>
+        <input asp-for="DiscountPercent" />
+        <span asp-validation-for="DiscountPercent" class="text-danger"></span>
 
-    <button type="submit" class="btn btn-primary">Calculate</button>
-    <input type="reset" value="Reset" />
+        <div>
+            <label>Discount amount:</label>
+            <label>@ViewBag.DiscountAmount.ToString("c2")</label>
+        </div>
+        <div>
+            <label>Total:</label>
+            <label>@ViewBag.Total.ToString("c2")</label>
+        </div>
 
+        <button type="submit">Calculate</button>
+        <a asp-action="Index">clear</a>
+         
+    </form>
+
+    
 
 </body>
