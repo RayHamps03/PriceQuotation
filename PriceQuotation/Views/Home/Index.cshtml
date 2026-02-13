@@ -7,37 +7,45 @@
 
 <h1> Price Quotation</h1>
 
-<br />
-
-<body>
-
+<div class="price-form">
     <form asp-action="Index" method="post">
 
         <div asp-validation-summary="ModelOnly" class="text-danger"></div>
 
-        <label asp-for="Subtotal">Subtotal:</label>
-        <input asp-for="Subtotal" />
-        <span asp-validation-for="Subtotal" class="text-danger"></span>
-        <br />
+        <div class="form-row">
+            <label asp-for="Subtotal"></label>
+            <div class="right-field">
+                <input asp-for="Subtotal" />
+                <span asp-validation-for="Subtotal" class="text-danger"></span>
+            </div>
+        </div>
 
-        <label asp-for="DiscountPercent">Discount percent:</label>
-        <input asp-for="DiscountPercent" />
-        <span asp-validation-for="DiscountPercent" class="text-danger"></span>
+        <div class="form-row">
+            <label asp-for="DiscountPercent">Discount percent:</label>
+            <div class="right-field">
+                <input asp-for="DiscountPercent" />
+                <span asp-validation-for="DiscountPercent" class="text-danger"></span>
+            </div>
+        </div>
 
-        <div>
+        <div class="form-row">
             <label>Discount amount:</label>
-            <label>@ViewBag.DiscountAmount.ToString("c2")</label>
+            <div class="right-field">
+                <span class="amount">@ViewBag.DiscountAmount.ToString("c2")</span>
+            </div>
         </div>
-        <div>
+
+        <div class="form-row">
             <label>Total:</label>
-            <label>@ViewBag.Total.ToString("c2")</label>
+            <div class="right-field">
+                <span class="amount">@ViewBag.Total.ToString("c2")</span>
+            </div>
         </div>
 
-        <button type="submit">Calculate</button>
-        <a asp-action="Index">clear</a>
-         
+        <div class="form-actions">
+            <button type="submit" class="btn">Calculate</button>
+            <a asp-action="Index">clear</a>
+        </div>
+
     </form>
-
-    
-
-</body>
+</div>

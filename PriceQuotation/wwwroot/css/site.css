@@ -29,3 +29,60 @@ body {
 .form-floating > .form-control-plaintext:focus::placeholder, .form-floating > .form-control:focus::placeholder {
   text-align: start;
 }
+
+/* Styles for the Price Quotation form */
+.price-form {
+  max-width: 640px;
+  margin: 1rem 0;
+}
+
+.price-form .form-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin: 0.5rem 0;
+}
+
+.price-form .form-row > label {
+  flex: 0 0 40%;
+  text-align: left;
+  font-weight: 600;
+}
+
+.price-form .right-field {
+  flex: 1 1 60%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.5rem;
+}
+
+.price-form input[type="text"],
+.price-form input[type="number"],
+.price-form .amount {
+  text-align: right;
+}
+
+.price-form .amount {
+  display: inline-block;
+  min-width: 6rem;
+}
+
+
+/* Responsive: stack label above input on small screens */
+@media (max-width: 575.98px) {
+  .price-form .form-row {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .price-form .form-row > label {
+    flex: none;
+    margin-bottom: 0.25rem;
+  }
+
+  .price-form .right-field {
+    justify-content: flex-start;
+  }
+}
